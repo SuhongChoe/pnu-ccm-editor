@@ -112,17 +112,17 @@ class App extends Component {
     super(props);
     this.state = {
       value: initValue[0],
-      placeholder: "Placeholder Text",
+      //placeholder: "Placeholder Text",
       theme: "monokai",
       mode: "python",
-      enableBasicAutocompletion: true,
-      enableLiveAutocompletion: true,
+      enableBasicAutocompletion: false,
+      enableLiveAutocompletion: false,
       fontSize: 14,
-      showGutter: true,
-      showPrintMargin: true,
+      showGutter: false,
+      showPrintMargin: false,
       highlightActiveLine: true,
       enableSnippets: false,
-      showLineNumbers: true
+      showLineNumbers: false
     };
     this.setPlaceholder = this.setPlaceholder.bind(this);
     this.setTheme = this.setTheme.bind(this);
@@ -192,7 +192,7 @@ class App extends Component {
             </p>
           </div>
 
-          <div className="field">
+          {/* <div className="field">
             <label>Placeholder:</label>
             <p className="control">
               <input
@@ -202,7 +202,7 @@ class App extends Component {
                 value={this.state.placeholder}
               />
             </p>
-          </div>
+          </div> */}
 
           <div className="field">
             <p className="control">
@@ -243,6 +243,20 @@ class App extends Component {
               <label className="checkbox">
                 <input
                   type="checkbox"
+                  checked={this.state.enableSnippets}
+                  onChange={e =>
+                    this.setBoolean("enableSnippets", e.target.checked)
+                  }
+                />
+                Enable Snippets
+              </label>
+            </p>
+          </div>
+          <div className="field">
+            <p className="control">
+              <label className="checkbox">
+                <input
+                  type="checkbox"
                   checked={this.state.showGutter}
                   onChange={e =>
                     this.setBoolean("showGutter", e.target.checked)
@@ -252,7 +266,7 @@ class App extends Component {
               </label>
             </p>
           </div>
-          <div className="field">
+          {/* <div className="field">
             <p className="control">
               <label className="checkbox">
                 <input
@@ -265,8 +279,8 @@ class App extends Component {
                 Show Print Margin
               </label>
             </p>
-          </div>
-          <div className="field">
+          </div> */}
+          {/* <div className="field">
             <p className="control">
               <label className="checkbox">
                 <input
@@ -279,21 +293,8 @@ class App extends Component {
                 Highlight Active Line
               </label>
             </p>
-          </div>
-          <div className="field">
-            <p className="control">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  checked={this.state.enableSnippets}
-                  onChange={e =>
-                    this.setBoolean("enableSnippets", e.target.checked)
-                  }
-                />
-                Enable Snippets
-              </label>
-            </p>
-          </div>
+          </div> */}
+          
           <div className="field">
             <p className="control">
               <label className="checkbox">
@@ -312,7 +313,7 @@ class App extends Component {
         <div className="examples column">
           <h2>Editor</h2>
           <AceEditor
-            placeholder={this.state.placeholder}
+            //placeholder={this.state.placeholder}
             mode={this.state.mode}
             theme={this.state.theme}
             name="editor"
@@ -344,14 +345,12 @@ class App extends Component {
             theme="monokai"
             readOnly={true}
             value={`<AceEditor
-  placeholder="${this.state.placeholder}"
   mode="${this.state.mode}"
   theme="${this.state.theme}"
   name="editor"
   onLoad={this.onLoad}
   onChange={this.onChange}
   fontSize={${this.state.fontSize}}
-  showPrintMargin={${this.state.showPrintMargin}}
   showGutter={${this.state.showGutter}}
   highlightActiveLine={${this.state.highlightActiveLine}}
   value={\`${this.state.value}\`}
