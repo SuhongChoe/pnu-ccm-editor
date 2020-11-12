@@ -1,0 +1,6 @@
+.title{
+    grid-area:title;
+    background-color:#0C151C;
+    color: white;
+    text-indent: 1em;
+}

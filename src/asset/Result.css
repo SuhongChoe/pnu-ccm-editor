@@ -1,0 +1,5 @@
+.result{
+    grid-area:result;
+    background-color:#263747;
+    color: whitesmoke;
+}
