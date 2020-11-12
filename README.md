@@ -1,6 +1,6 @@
 # pnu-ccm-editor
 
-A set of react components for Ace editor
+A set of react components for CodeMirror
 
 ## 요구사항
 
@@ -12,8 +12,6 @@ A set of react components for Ace editor
 
 ## 설치방법
 
-### Windows
-
 ```
 $ git clone https://github.com/choesuhong/pnu-ccm-editor.git
 $ cd pnu-ccm-editor
@@ -21,16 +19,7 @@ $ yarn
 $ yarn start
 ```
 
-### Linux
-
-```
-$ git clone https://github.com/choesuhong/pnu-ccm-editor.git
-$ cd pnu-ccm-editor
-$ yarn
-$ yarn start
-```
-
-The editor can then be opened at http://localhost:9000
+The editor can then be opened at http://localhost:3000
 
 ## 참여인원
 
@@ -43,6 +32,7 @@ The editor can then be opened at http://localhost:9000
 - monaco editor, https://microsoft.github.io/monaco-editor/
 - React-Ace project, https://github.com/securingsincity/react-ace
 - React study, https://opentutorials.org/module/4058
+- Programmers, https://programmers.co.kr/
 
 ## License
 
