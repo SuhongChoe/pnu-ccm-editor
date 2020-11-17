@@ -2,4 +2,10 @@
     grid-area:result;
     background-color:#263747;
     color: whitesmoke;
+    padding: 5px;
+}
+
+.result button{
+    background-color: #263747;
+    color: whitesmoke;
 }

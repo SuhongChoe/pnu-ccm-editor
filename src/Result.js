@@ -5,12 +5,12 @@ const content = [
     {
         tab: "실행결과",
         content:
-            "      실행결과"
+            "실행결과"
     },
     {
         tab: "제출결과",
         content:
-            "      제출결과"
+            "제출결과"
     }
 ];
   
@@ -27,7 +27,7 @@ function Result(){
     return (
       <div className="result">
         {content.map((section, index) => (
-          <button onClick={() => contentChange(index)}>{section.tab}</button>
+          <button key={index} onClick={() => contentChange(index)}>{section.tab}</button>
         ))}
         <br />
         <br />

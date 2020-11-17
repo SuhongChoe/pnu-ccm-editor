@@ -7,11 +7,22 @@
 
 .App{
     display:grid;
-    grid-template-columns:3fr 7fr;
-    grid-template-rows:25px 528px 204px;
-    height:auto;
+    height:100vh;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 35px 1fr 1fr;
     grid-template-areas: 
         'title title'
         'des editor'
         'des result';
+}
+
+.App_display_none{
+    display:grid;
+    height:100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 35px 1fr 1fr;
+    grid-template-areas: 
+        'title'
+        'editor'
+        'result';
 }

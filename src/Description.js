@@ -8,31 +8,9 @@ class Description extends Component {
         problems
     };
 
-    componentDidMount(){
-        //this._getProblem();
-    }
-
-    // _renderProblem = () => {
-
-    // }
-
-    // _getProblem = async () => {
-    //     const problem = await this._callApi();
-    //     this.setState({
-    //         problem
-    //     });
-    // };
-
-    // _callApi = () => {
-    //     return fetch("")
-    //     .then((response) => response.json())
-    //     .then((json) => json.data.problem)
-    //     .catch((err) => console.log(err));
-    // };
-
     render(){
         return(
-            <div className="des" style={{whiteSpace: 'pre-line'}}>
+            <div className={this.props.display? "des":"des_none"} style={{whiteSpace: 'pre-line'}}>
                 <p>{this.state.problems[0].description}</p>
     
                 <p id="bold">입력</p>

@@ -4,8 +4,8 @@ import {UnControlled as CodeMirror} from 'react-codemirror2'
 import 'codemirror/mode/clike/clike'
 import 'codemirror/mode/python/python'
 
-import 'codemirror/theme/ayu-dark.css'
-import 'codemirror/theme/eclipse.css'
+import 'codemirror/theme/base16-dark.css'
+import 'codemirror/theme/base16-light.css'
 
 import 'codemirror/lib/codemirror.css'
 
@@ -42,7 +42,7 @@ const languages = [
     {
         lang: "java",
         mode: 'text/x-java',
-        value: 'import java.io.*;\nclass Main {\n\tpublic static void main(String[] args) throws Exception {\n\t\tBufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n\t\tString input = br.readLine();\n\t\tSystem.out.println("Hello CCM! Your input is " + input);\n\t}\n}\n'
+        value: 'import java.io.*;\nclass Main {\n\tpublic static void main(String[] args) throws Exception {\n\t\tBufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n\t\tString input = br.readLine();\n\t\tSystem.out.println("Hello CCM! Your input is " + input);\n\t}\n}'
     },
     {
         lang: "python",
@@ -54,11 +54,11 @@ const languages = [
 const Theme = [
     {
         mode:'light',
-        theme:'eclipse'
+        theme:'base16-light'
     },
     {
         mode:'dark',
-        theme:'ayu-dark'
+        theme:'base16-dark'
     }
 ]
 
@@ -67,7 +67,7 @@ class Editor extends Component {
         super(props);
         this.state={
             value: languages[0].value,
-            theme: 'eclipse',
+            theme: 'base16-light',
             minimap: true,
             mode: languages[0].mode,
             onKeyUp:(editor, event) =>{
@@ -84,7 +84,6 @@ class Editor extends Component {
             autoCloseBrackets: true,
             keyMap: 'sublime'
         }
-        //this.handleChange = this.handleChange.bind(this);
     }
 
     // onChange = (newValue) => {
@@ -122,18 +121,31 @@ class Editor extends Component {
         return (
             <div className="editor">
                 <div id="menu">
-                    <span id="end">
-                        <select
-                            name="mode"
-                            onChange={this.setMode}
-                            value={this.state.mode}
-                        >
-                            {languages.map((lang,index) => (
-                                <option key={index} value={lang.mode}>
-                                    {lang.lang}
-                                </option>
-                            ))}
-                        </select>
+                    <span>
+                        <button >
+                            제출
+                        </button>
+                    </span>
+                    <span>
+                        <button >
+                            실행
+                        </button>
+                    </span>
+                    <span>
+                        <button >
+                            저장
+                        </button>
+                    </span>
+                    <span>
+                        <button onClick={this.Reset}>
+                            초기화
+                        </button>
+                    </span>
+                    <span>
+                        <span>미니맵</span>
+                        <span>
+                            <Switch className="Switch" onChange={this.setMiniMap} checked={this.state.minimap} height={20} width={40} onColor={'#263747'}/>
+                        </span>
                     </span>
                     <span>
                         <select
@@ -148,31 +160,18 @@ class Editor extends Component {
                             ))}
                         </select>
                     </span>
-                    <label>
-                        <span id="mini">미니맵</span>
-                        <span id="sw">
-                            <Switch className="Switch" onChange={this.setMiniMap} checked={this.state.minimap} height={20} width={40} onColor={'#263747'}/>
-                        </span>
-                    </label>
                     <span>
-                        <button onClick={this.Reset}>
-                            초기화
-                        </button>
-                    </span>
-                    <span>
-                        <button >
-                            저장
-                        </button>
-                    </span>
-                    <span>
-                        <button >
-                            실행
-                        </button>
-                    </span>
-                    <span>
-                        <button >
-                            제출
-                        </button>
+                        <select
+                            name="mode"
+                            onChange={this.setMode}
+                            value={this.state.mode}
+                        >
+                            {languages.map((lang,index) => (
+                                <option key={index} value={lang.mode}>
+                                    {lang.lang}
+                                </option>
+                            ))}
+                        </select>
                     </span>
                 </div>
                 <CodeMirror className="CodeMirror"

@@ -1,7 +1,7 @@
 #menu{
     background-color: #263747;
     color: white;
-    padding-bottom: 4px;
+    padding: 5px;
 }
 
 .editor{
@@ -9,26 +9,25 @@
 }
 
 .CodeMirror {
-    height: 500px;
+    height: 400px;
     font-size: 14px;
     line-height: 150%;
+    font-weight: bold;
 }
 
-button, select, #mini{
+#menu{
+    border: 5px 0px;
+}
+
+#menu button, select{
     background-color: #263747;
     color: whitesmoke;
-    margin-right: 5px;
-}
-
-#end{
-    margin-left: 10px;
-}
-
-#sw{
-    margin-right: 630px;
-    top: 0px;
+    float: right;
+    margin: 0px 2.5px;
 }
 
 .Switch{
-    top: 5px;
+    top: 3px;
+    padding: 0px 5px;
 }
+
