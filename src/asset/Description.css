@@ -14,12 +14,13 @@
 }
 
 ::-webkit-scrollbar {
-    width: 15px;
-    height: 11px;
+    /* width: 15px;
+    height: 11px; */
+    display: none;
 }
-::-webkit-scrollbar-button {
-  width: 5px;
-  height: 5px;
+/* ::-webkit-scrollbar-button {
+  width: 0px;
+  height: 1px;
 }
 ::-webkit-scrollbar-thumb {
   background: #263747;
@@ -45,7 +46,7 @@
 }
 ::-webkit-scrollbar-corner {
   background: transparent;
-}
+} */
 
 #bold{
     font-weight: bold;
